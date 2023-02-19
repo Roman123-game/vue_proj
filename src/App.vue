@@ -29,7 +29,7 @@ PostForm,PostList
     },
     methods: {
         createPost(post) {
-           console.log(post)
+           console.log(post )
         },
         inputTitle(event) {
             this.title = event.target.value;

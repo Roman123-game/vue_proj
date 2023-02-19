@@ -1,9 +1,10 @@
-
+eslint-disable 
 <template>
   <div>
     <h4>List of Posts</h4>
      <PostItemVue class="post" v-for="post in posts" v-bind:key="post.id"/>
   </div>
+ 
 </template>
 
 <script>
@@ -11,7 +12,7 @@ import PostItemVue from './PostItem.vue';
   export default {
     components:{PostItemVue},
     props:{
-      posts:{
+      post:{
         type:Object,
         required:true,
       }
