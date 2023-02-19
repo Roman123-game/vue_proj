@@ -1,10 +1,10 @@
 <template>
   <div class="app">
-    <form>
+    <form @submit.prevent>
       <h5>Posts create</h5>
-      <input class="input" v-bind:value="title" type="text" placeholder="name">
-      <input class="input" v-bind:value="body" type="text" placeholder="description">
-      <button class="btn" @click="createPost" > Create post</button>
+      <input class="input" v-bind:value="title" @input="inputTitle" type="text" placeholder="name">
+      <input class="input" v-bind:value="body" @input="inputBody" type="text" placeholder="description">
+      <button class="btn" @click="createPost"> Create post</button>
     </form>
 
 
@@ -24,19 +24,26 @@ export default {
         { id: 2, title: "javascript2", body: "some date here2" },
         { id: 3, title: "javascript3", body: "some date here3 " }
       ],
-      title : '',
-      body : ''
+      title: " ",
+      body: " ",
     }
   },
   methods: {
     createPost() {
-
+      const newPost = {
+        id: Date.now(),
+        title: this.title,
+        body: this.body
+      }
+      this.posts.push(newPost)
+      this.title = '',
+        this.body = ''
     },
     inputTitle(event) {
-      console.log(event)
+      this.title = event.target.value
     },
-    inputBody() {
-
+    inputBody(event) {
+      this.body = event.target.value
     },
 
   }
@@ -85,4 +92,5 @@ form {
   border-radius: 50px;
   padding: 5px;
   color: lightskyblue
-}</style>
+}
+</style>
