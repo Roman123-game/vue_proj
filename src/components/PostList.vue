@@ -1,6 +1,6 @@
 <template>
   <div class="post" v-for="post in posts" v-bind:key="post.id">
-   <div><Strong>Name:</Strong>{{post.name}}</div>
+   <div><Strong>Name:</Strong>{{post.title}}</div>
    <div><Strong>Description:</Strong>{{post.description}}</div>
   </div>
 </template>

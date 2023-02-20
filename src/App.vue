@@ -1,5 +1,5 @@
 <template>
-<PostForm/>
+<PostForm @listenToPost="createPost"/>
 <PostList v-bind:posts="posts"/>
 </template>
 
@@ -16,22 +16,13 @@ export default {
       {id :2, name : "javascript", description : "post about javascript2"},
       {id :3, name : "javascript", description : "post about javascript3"}
     ],
-    title: '',
-  description: '',
   };
 
-       
  },
  methods:{
-  createPost(){
-const newPost={
-  id: Date.now(),
-  title: this.title,
-  description: this.description
-}
-this.posts.push(newPost)
-this.title =''
-this.description= ''
+  createPost(post){
+    this.posts.push(post)
+
   }
  }
 
