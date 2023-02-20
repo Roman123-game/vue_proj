@@ -1,43 +1,42 @@
 <template>
-  <div class="app">
-<post-form
-@create="createPost"
-/>
-<post-list 
-v-bind:posts="posts"
-/>
-  </div>
+<PostForm/>
+<PostList v-bind:posts="posts"/>
 </template>
 
 <script>
-import PostForm from '@/components/PostForm.vue'
-import PostList from '@/components/PostList.vue';
+import PostForm from '@/components/PostForm';
+import PostList from '@/components/PostList';
 
 export default {
-  components:{
-PostForm,PostList
-  },
-    data() {
-        return {
-            posts: [
-                { id: 1, title: "javascript", body: "some date here" },
-                { id: 2, title: "javascript2", body: "some date here2" },
-                { id: 3, title: "javascript3", body: "some date here3 " }
-            ],
-   
-        };
-    },
-    methods: {
-        createPost(post) {
-           console.log(post )
-        },
-        inputTitle(event) {
-            this.title = event.target.value;
-        },
-        inputBody(event) {
-            this.body = event.target.value;
-        },
-    },
+  components:{PostForm,PostList},
+ data(){
+  return {
+    posts:[
+      {id :1, name : "javascript", description : "post about javascript"},
+      {id :2, name : "javascript", description : "post about javascript2"},
+      {id :3, name : "javascript", description : "post about javascript3"}
+    ],
+    title: '',
+  description: '',
+  };
+
+       
+ },
+ methods:{
+  createPost(){
+const newPost={
+  id: Date.now(),
+  title: this.title,
+  description: this.description
+}
+this.posts.push(newPost)
+this.title =''
+this.description= ''
+  }
+ }
+
+
+
 }
 
 </script>
@@ -53,6 +52,9 @@ PostForm,PostList
 .app {
   padding: 20px;
 }
+
+
+
 
 
 </style>

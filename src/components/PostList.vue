@@ -1,34 +1,29 @@
-eslint-disable 
 <template>
-  <div>
-    <h4>List of Posts</h4>
-     <PostItemVue class="post" v-for="post in posts" v-bind:key="post.id"/>
+  <div class="post" v-for="post in posts" v-bind:key="post.id">
+   <div><Strong>Name:</Strong>{{post.name}}</div>
+   <div><Strong>Description:</Strong>{{post.description}}</div>
   </div>
- 
 </template>
 
 <script>
-import PostItemVue from './PostItem.vue';
   export default {
-    components:{PostItemVue},
     props:{
-      post:{
-        type:Object,
-        required:true,
+      posts:{
+        type: Array,
+        required: true
       }
     }
-    
   }
 </script>
 
 <style lang="css" scoped>
 
-.post {
-  width: 80%;
-  padding: 10px;
-  border: 1px solid lightslategray;
-  border-radius: 50px;
+.post{
+  padding: 15px;
   margin-top: 15px;
+  border-radius: 50px;
+  border: 1px  solid grey
 }
+
 
 </style>
