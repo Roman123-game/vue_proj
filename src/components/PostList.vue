@@ -1,12 +1,17 @@
 <template>
-  <div>
+  <div v-show="posts.length>0">
     <h4>Post List</h4>
   <PostItem 
   v-for="post in posts" 
   v-bind:key="post.id"
-  :post="post"/>
+  :post="post"
+  @remove="$emit('remove',post)"
+  />
  
 </div>
+<h1 v-show ="posts.length ===  0">
+  Post List empty
+</h1>
 </template>
 
 <script>
