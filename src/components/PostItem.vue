@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import MYButton from './UI/MYButton.vue';
   export default {
     props:{
       post:{
@@ -20,7 +19,6 @@ import MYButton from './UI/MYButton.vue';
         required:true
       }
     },
-    components:{MYButton}
   }
 </script>
 
@@ -31,14 +29,6 @@ import MYButton from './UI/MYButton.vue';
   border-radius: 50px;
   border: 1px  solid grey
 }
-.btn {
-  margin-top: 3px;
-  align-self: flex-start;
-  background: none;
-  color: blueviolet;
-  padding: 5px;
-  border-radius: 1px solid grey;
-  border-radius: 50px;
-}
+
 
 </style>
