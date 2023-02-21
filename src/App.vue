@@ -1,14 +1,20 @@
 <template>
-<PostForm @listenToPost="createPost"/>
+  <h2>Post List</h2>
+  <MYButton @clcick="showDialog">Crete Post</MYButton>
+  <MYDialog v-model:show="dialogVisible ">
+    <PostForm @create="createPost"/>
+  </MYDialog>
 <PostList v-bind:posts="posts" @remove="removePost"/>
 </template>
 
 <script>
 import PostForm from '@/components/PostForm';
 import PostList from '@/components/PostList';
+import MYButton from './components/UI/MYButton.vue';
+import MYDialog from './components/UI/MYDialog.vue';
 
 export default {
-  components:{PostForm,PostList},
+  components:{ PostForm, PostList, MYDialog, MYButton },
  data(){
   return {
     posts:[
@@ -16,6 +22,7 @@ export default {
       {id :2, name : "javascript", description : "post about javascript2"},
       {id :3, name : "javascript", description : "post about javascript3"}
     ],
+    dialogVisible : false,
   };
 
  },
@@ -27,7 +34,11 @@ export default {
   removePost(post){
     this.posts =this.posts.filter(p=>p.id !== post.id)
 
+  },
+  showDialog(){
+    this.dialogVisible = true;
   }
+
  }
 
 
