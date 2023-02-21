@@ -2,7 +2,7 @@
   <div class="post" >
     <div>
    <div><Strong>Name:</Strong>{{post.title}}</div>
-   <div><Strong>Description:</Strong>{{post.description}}</div>
+   <div><Strong>Description:</Strong>{{post.body}}</div>
   </div>
   <div>
     <MYButton

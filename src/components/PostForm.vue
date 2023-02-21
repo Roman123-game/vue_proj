@@ -6,7 +6,7 @@
     type="text" 
     placeholder="name"/>
     <MYInput 
-    v-model="post.description"  
+    v-model="post.body"  
     type="text" 
     placeholder="description"/>
     <MYButton class="btn" @click="createPost">Create</MYButton>
@@ -19,7 +19,7 @@ export default {
     return {
       post: {
         title: '',
-        description: ''
+        body: ''
       }
     }
   },
@@ -30,7 +30,7 @@ export default {
       this.description = '',
       this.post = {
         title: '',
-        description: ''
+        body: ''
       }
     }
   }
