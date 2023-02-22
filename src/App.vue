@@ -28,9 +28,9 @@ export default {
       dialogVisible: false,
       isPostLoading: false,
       selectedSort: "",
-      sortOptions:[
-        {value: 'title', name: "about name"},
-        {value: 'body', name: "about body"},
+      sortOptions: [
+        { value: 'title', name: "about name" },
+        { value: 'body', name: "about body" },
       ],
     };
 
@@ -51,9 +51,8 @@ export default {
     async fetchPosts() {
       try {
         this.isPostLoading = true
-        const responce = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        const responce = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
         this.posts = responce.data
-
       } catch (e) {
         alert(e)
       } finally {
@@ -64,7 +63,24 @@ export default {
   },
   mounted() {
     this.fetchPosts()
-  }
+  },
+  computed:{
+sortedPosts(){
+  return[...this.posts].sort((post1,post2)=>{
+        return post1[this.selectedSort]?.localeCompare(post2[this.selectedSort])
+
+      })
+}
+  },
+  // watch: {
+  //   selectedSort(newValue) {
+  //     this.posts.sort((post1,post2)=>{
+  //       return post1[this.selectedSort]?.localeCompare(post2[this.selectedSort])
+
+  //     })
+  //   },
+  
+  // }
 }
 
 </script>
