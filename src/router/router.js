@@ -1,5 +1,6 @@
-import PostsPage from '../pages/PostsPage'
-import Page from '../pages/Page'
+import PostsPage from '@/pages/PostsPage'
+import PostsPageStore from '@/pages/PostsPageStore'
+import Page from '@/pages/Page'
 
 import {createRouter, createWebHistory} from "vue-router";
 
@@ -10,6 +11,7 @@ const router = createRouter({
   routes:[ 
     {path: '/',component : Page },
     {path: '/page',component : PostsPage },
+    {path: '/store',component : PostsPageStore },
 ],
   
 })

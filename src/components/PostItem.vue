@@ -6,10 +6,7 @@
    <div><Strong>Description:</Strong>{{post.body}}</div>
   </div>
   <div>
-    <MYButton
-    @click="$emit('remove',post)" 
-    class="btn">
-    RemovePost</MYButton>
+    <MYButton @click="$emit('remove',post)" > RemovePost</MYButton>
   </div>
   </div>
 

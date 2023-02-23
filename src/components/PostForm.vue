@@ -9,7 +9,7 @@
     v-model="post.body"  
     type="text" 
     placeholder="description"/>
-    <MYButton class="btn" @click="createPost">Create</MYButton>
+    <MYButton @click="createPost">Create</MYButton>
   </form>
 </template>
 

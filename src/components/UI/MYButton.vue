@@ -13,11 +13,12 @@
 <style lang="css" scoped>
 .btn {
   margin-top: 3px;
+  margin-left:3px;
   align-self: flex-start;
   background: none;
   color: blueviolet;
   padding: 5px;
-  border-radius: 1px solid grey;
+  border-radius: 3px double black;
   border-radius: 50px;
 }
 </style>

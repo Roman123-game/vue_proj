@@ -3,6 +3,7 @@
 <div class="navbar">
   <MYButton @click="$router.push('/')">MAIN</MYButton>
   <MYButton @click="$router.push('/page')">POSTS</MYButton>
+  <MYButton @click="$router.push('/store')">STORE</MYButton>
 </div>
   </div>
 </template>

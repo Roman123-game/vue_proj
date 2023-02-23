@@ -1,6 +1,3 @@
-
-
-
 <template>
     <Navbar></Navbar>
   <div class="app">
