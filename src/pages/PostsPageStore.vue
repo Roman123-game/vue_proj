@@ -2,12 +2,12 @@
   <div>
 
     <h2>Post List</h2>
-    <div>
+    <!-- <div>
       <MYInput v-model="searchQuery" placeholder="Search ..." />
       <MYSelect v-model="selectedSort" :options="sortOptions" />
       <MYButton @clcick="showDialog">Crete Post</MYButton>
 
-    </div>
+    </div> -->
 
     <MYDialog v-model:show="dialogVisible">
       <PostForm @create="createPost" />
@@ -35,6 +35,8 @@ import MYDialog from '@/components/UI/MYDialog.vue';
 import axios from 'axios';
 import MYSelect from '@/components/UI/MYSelect.vue';
 import MYInput from '@/components/UI/MYInput.vue';
+import {mapState, mapGetters, mapActions, mapMutations} from 'vuex'
+
 
 export default {
   components: { PostForm, PostList, MYDialog, MYButton, MYSelect, MYInput },
@@ -92,7 +94,7 @@ export default {
     }
   },  
   mounted() {
-    this.fetchPosts()
+    // this.fetchPosts()
   },
   computed: {
     sortedPosts() {

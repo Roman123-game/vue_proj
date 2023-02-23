@@ -13,10 +13,14 @@
     <PostList v-bind:posts="sortedAndSearched" @remove="removePost" v-if="!isPostLoading" />
     <div v-else>Post Loading ...</div>
     <div class="page_wrapper">
-      <div v-for="pageNumber in totalPage" :key="pageNumber" class="page"
-        v-bind:class="{ 'current-page': page === pageNumber }" @click="changePages(pageNumber)">
-        {{ pageNumber }}
-      </div>
+      <div v-for = "pageNumber in totalPage" 
+      :key="pageNumber" 
+      class="page"
+      v-bind:class="{'current-page': page === pageNumber }"
+      @click ="changePages(pageNumber)"
+      >
+      {{ pageNumber }}
+    </div>
     </div>
   </div>
 </template>
@@ -51,8 +55,8 @@ export default {
   },
   methods: {
     createPost(post) {
-      this.posts.push(post);
-      this.dialogVisible = false;
+      this.posts.push(post),
+        this.dialogVisible = false
     },
     removePost(post) {
       this.posts = this.posts.filter(p => p.id !== post.id)
@@ -65,15 +69,15 @@ export default {
     async fetchPosts() {
       try {
         this.isPostLoading = true
-        const responce =
-          await axios.get('https://jsonplaceholder.typicode.com/posts', {
-            params: {
-              _page: this.page,
-              _limit: this.limit
-            }
-          });
-        this.totalPage = Math.ceil(responce.headers['x-total-count'] / this.limit),
-          this.posts = responce.data
+        const responce = 
+        await axios.get('https://jsonplaceholder.typicode.com/posts',{
+          params:{
+            _page : this.page,
+            _limit: this.limit
+          }
+        });
+        this.totalPage =Math.ceil(responce.headers['x-total-count'] / this.limit),
+        this.posts = responce.data
       } catch (e) {
         alert(e)
       } finally {
@@ -81,10 +85,10 @@ export default {
 
       }
     },
-    changePages(pageNumber) {
+    changePages(pageNumber){
       this.page = pageNumber
     }
-  },
+  },  
   mounted() {
     this.fetchPosts()
   },
@@ -95,35 +99,34 @@ export default {
       })
     },
     sortedAndSearched() {
-      return this.sortedPosts.filter(post =>
-        post.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
+      return this.sortedPosts.filter(post=>
+      post.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
 
     }
   },
   watch: {
-    page() {
-      this.fetchPosts()
-    }
+   page(){
+    this.fetchPosts()
+   }
   }
 }
 
 </script>
 
 <style lang="css" scoped>
-.page_wrapper {
+.page_wrapper{
   display: flex;
   margin-top: 15px;
   margin-bottom: 15px;
-  color: black
-}
+  color:black
 
-.page {
+}
+.page{
   border: 1px solid lightslategray;
   padding: 10px;
   border-radius: 15px;
 }
-
-.current-page {
+.current-page{
   border: 3px double lightcoral;
   border-radius: 15px;
 }
