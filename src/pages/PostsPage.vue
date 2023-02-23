@@ -1,4 +1,5 @@
 <template>
+  <div>
     <h2>Post List</h2>
     <div>
       <MYInput v-model="searchQuery" placeholder="Search ..." />
@@ -21,16 +22,17 @@
       {{ pageNumber }}
     </div>
     </div>
+  </div>
 </template>
 
 <script>
 import PostForm from '@/components/PostForm';
 import PostList from '@/components/PostList';
-import MYButton from './components/UI/MYButton.vue';
-import MYDialog from './components/UI/MYDialog.vue';
+import MYButton from '../components/UI/MYButton.vue';
+import MYDialog from '../components/UI/MYDialog.vue';
 import axios from 'axios';
-import MYSelect from './components/UI/MYSelect.vue';
-import MYInput from './components/UI/MYInput.vue';
+import MYSelect from '../components/UI/MYSelect.vue';
+import MYInput from '../components/UI/MYInput.vue';
 
 export default {
   components: { PostForm, PostList, MYDialog, MYButton, MYSelect, MYInput },
@@ -111,7 +113,7 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .page_wrapper{
   display: flex;
   margin-top: 15px;
