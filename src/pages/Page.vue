@@ -1,6 +1,6 @@
 <template>
   <div>
-<h1>New page routere stuff</h1>
+<h1>Welcome to Post aplication</h1>
   </div>
 </template>
 
