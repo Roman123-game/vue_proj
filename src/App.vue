@@ -16,7 +16,8 @@
       <div v-for = "pageNumber in totalPage" 
       :key="pageNumber" 
       class="page"
-      :class="{'current-page': page === pageNumber }"
+      v-bind:class="{'current-page': page === pageNumber }"
+      @click ="changePages(pageNumber)"
       >
       {{ pageNumber }}
     </div>
@@ -42,7 +43,7 @@ export default {
       isPostLoading: false,
       selectedSort: "",
       searchQuery: "",
-      pageNumber: 1,
+      page: 1,
       limit: 10,
       totalPage: 0,
       sortOptions: [
@@ -83,6 +84,10 @@ export default {
         this.isPostLoading = false
 
       }
+    },
+    changePages(pageNumber){
+      this.page = pageNumber
+
     }
   },  
   mounted() {
@@ -134,8 +139,10 @@ export default {
 .page{
   border: 1px solid lightslategray;
   padding: 10px;
+  border-radius: 15px;
 }
 .current-page{
-  border: 2px solid lightcoral;
+  border: 3px double lightcoral;
+  border-radius: 15px;
 }
 </style>
