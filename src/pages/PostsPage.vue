@@ -1,5 +1,4 @@
 <template>
-  <div class="app">
     <h2>Post List</h2>
     <div>
       <MYInput v-model="searchQuery" placeholder="Search ..." />
@@ -22,7 +21,6 @@
       {{ pageNumber }}
     </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -108,22 +106,12 @@ export default {
    page(){
     this.fetchPosts()
    }
-}
+  }
 }
 
 </script>
 
-
-<style >
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.app {
-  padding: 20px;
-}
+<style lang="scss" scoped>
 .page_wrapper{
   display: flex;
   margin-top: 15px;
