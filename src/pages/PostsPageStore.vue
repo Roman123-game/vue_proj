@@ -1,10 +1,12 @@
 <template>
   <div>
+
     <h2>Post List</h2>
     <div>
       <MYInput v-model="searchQuery" placeholder="Search ..." />
-      <MYButton @clcick="showDialog">Crete Post</MYButton>
       <MYSelect v-model="selectedSort" :options="sortOptions" />
+      <MYButton @clcick="showDialog">Crete Post</MYButton>
+
     </div>
 
     <MYDialog v-model:show="dialogVisible">
@@ -55,8 +57,8 @@ export default {
   },
   methods: {
     createPost(post) {
-      this.posts.push(post),
-        this.dialogVisible = false
+      this.posts.push(post);
+      this.dialogVisible = false;
     },
     removePost(post) {
       this.posts = this.posts.filter(p => p.id !== post.id)
@@ -129,5 +131,8 @@ export default {
 .current-page{
   border: 3px double lightcoral;
   border-radius: 15px;
+}
+.likes{
+  color: lightblue
 }
 </style>

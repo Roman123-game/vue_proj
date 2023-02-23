@@ -7,6 +7,11 @@
   </div>
   <div>
     <MYButton @click="$emit('remove',post)" > RemovePost</MYButton>
+    <div>
+    <h2 class="likes">likes: {{$store.getters.doubleLikes}}</h2>
+      <MYButton @click='$store.commit("incrementLikes")'>LIKES</MYButton>
+      <MYButton   @click='$store.commit("decrementLikes")'>DISLIKES</MYButton>
+    </div>
   </div>
   </div>
 

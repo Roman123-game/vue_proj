@@ -1,6 +1,6 @@
 <template>
   <div class="dialog" v-show="show" @click="hideDialog">
-    <div class="dialogContent">
+    <div class="dialog_content">
       <slot></slot>
     </div>
   </div>
@@ -25,7 +25,7 @@ mixins:[toggleMixin]
   display: flex;
 }
 
-.dialogContent {
+.dialog_content {
   margin: auto;
   background: white;
   border-radius: 10px;

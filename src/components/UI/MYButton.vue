@@ -18,7 +18,7 @@
   background: none;
   color: blueviolet;
   padding: 5px;
-  border-radius: 3px double black;
+  border: 3px double grey;
   border-radius: 50px;
 }
 </style>
