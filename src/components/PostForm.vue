@@ -10,6 +10,7 @@
     type="text" 
     placeholder="description"/>
     <MYButton @click="createPost">Create</MYButton>
+  
   </form>
 </template>
 
@@ -17,6 +18,7 @@
 export default {
   data() {
     return {
+      inputModel: true,
       post: {
         title: '',
         body: ''
