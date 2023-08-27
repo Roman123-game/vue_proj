@@ -7,10 +7,9 @@
 
 <script>
 import Navbar from './components/Navbar.vue';
-import NewComp from './components/UI/NewComp.vue';
 
   export default {
-    components: { Navbar, NewComp }
+    components: { Navbar}
 }
 </script>
 
